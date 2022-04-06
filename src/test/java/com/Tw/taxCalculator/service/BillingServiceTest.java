@@ -22,7 +22,7 @@ public class BillingServiceTest {
 	private BillingService billingService;
 
 	@Test
-	public void ShouldReturnReceiptWithTotal_$12_and_tax_$0_WhenBookAt_$12_IsPurchased() {
+	public void shouldReturnReceiptWithTotal_$12_and_tax_$0_WhenBookAt_$12_IsPurchased() {
 		Item book = new Item("book", 1,Item.Type.BOOK,new BigDecimal(12), false);
 		
 		List<Item> items = new ArrayList<>();
@@ -34,7 +34,7 @@ public class BillingServiceTest {
 	}
 	
 	@Test
-	public void ShouldIncludeMultipleItemsAndTaxInTotalAmount() {
+	public void shouldReturnReceiptWithTotal_$34_and_tax_$2_WhenAZt_$32_IsPurchased() {
 		Item book = new Item("book", 1,Item.Type.BOOK,new BigDecimal(12), false);
 		Item drums = new Item("Drums", 2,Item.Type.OTHER,new BigDecimal(10), false);
 		List<Item> items = new ArrayList<>();
@@ -48,7 +48,7 @@ public class BillingServiceTest {
 	}
 	
 	@Test
-	public void ShouldReturnReceiptWith_$15_TaxWhenTaxableItemkAt_$100_IsPurchased() {
+	public void ShouldReturnReceiptWith_$1_point_5_TaxWhenTaxableItemkAt_$28_point_33_IsPurchased() {
 		Item book = new Item("book", 1,Item.Type.BOOK,new BigDecimal(12.49), false);
 		Item musicCD = new Item("music CD", 1,Item.Type.OTHER,new BigDecimal(14.99), false);
 		Item chocolate = new Item("chocolate", 1,Item.Type.FOOD,new BigDecimal(0.85), false);	

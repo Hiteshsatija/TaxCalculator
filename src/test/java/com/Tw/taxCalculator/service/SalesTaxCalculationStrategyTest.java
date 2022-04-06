@@ -17,7 +17,7 @@ public class SalesTaxCalculationStrategyTest {
 	private TaxCalculationStrategy salesTaxCalculationStrategy;
 
 	@Test
-	public void ShouldReturnZeroTaxWhenBookIsPurchased() {
+	public void shouldReturnZeroTaxWhenBookIsPurchased() {
 		Item book = new Item("book", 1, Item.Type.BOOK, new BigDecimal(12), false);
 
 		BigDecimal tax = salesTaxCalculationStrategy.calculate(book);
@@ -26,7 +26,7 @@ public class SalesTaxCalculationStrategyTest {
 	}
 
 	@Test
-	public void ShouldReturnReceiptWithOneDollarTaxWhenTaxableItemAt_$10_IsPurchased() {
+	public void shouldReturnReceiptWith_$1_TaxWhenTaxableItemAt_$10_IsPurchased() {
 		Item drums = new Item("Drums", 1, Item.Type.OTHER, new BigDecimal(10), false);
 
 		BigDecimal tax = salesTaxCalculationStrategy.calculate(drums);
@@ -36,7 +36,7 @@ public class SalesTaxCalculationStrategyTest {
 	}
 
 	@Test
-	public void ShouldReturn_15_WhenTaxableItemkAt_$100_IsPurchased() {
+	public void shouldReturn_$15_WhenTaxableItemkAt_$100_IsPurchased() {
 		Item importedDrums = new Item("imported drums", 1, Item.Type.OTHER, new BigDecimal(100), true);
 
 		BigDecimal tax = salesTaxCalculationStrategy.calculate(importedDrums);
@@ -46,7 +46,7 @@ public class SalesTaxCalculationStrategyTest {
 	}
 
 	@Test
-	public void ShouldReturn_5_WhenUntaxedImportedeItemkAt_$100_IsPurchased() {
+	public void shouldReturn_$5_WhenUntaxedImportedeItemkAt_$100_IsPurchased() {
 		Item importedBook = new Item("imported book", 1, Item.Type.BOOK, new BigDecimal(100), true);
 
 		BigDecimal tax = salesTaxCalculationStrategy.calculate(importedBook);
